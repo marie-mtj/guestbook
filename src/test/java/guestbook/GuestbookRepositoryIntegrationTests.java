@@ -34,6 +34,7 @@ import org.springframework.data.domain.Sort;
  * @author Paul Henke
  */
 @SpringBootTest
+
 @Transactional
 class GuestbookRepositoryIntegrationTests {
 
@@ -42,7 +43,7 @@ class GuestbookRepositoryIntegrationTests {
 	@Test
 	void persistsGuestbookEntry() {
 
-		GuestbookEntry entry = repository.save(new GuestbookEntry("Yoda", "May the force be with you!"));
+		GuestbookEntry entry = repository.save(new GuestbookEntry("Yoda", "May the force be with you!", "test"));
 
 		assertThat(repository.findAll()).contains(entry);
 	}
@@ -50,7 +51,7 @@ class GuestbookRepositoryIntegrationTests {
 	@Test // #34
 	void findsGuestbookEntryByAuthorName() {
 
-		GuestbookEntry entry = repository.save(new GuestbookEntry("Yoda", "May the force be with you!"));
+		GuestbookEntry entry = repository.save(new GuestbookEntry("Yoda", "May the force be with you!", "test"));
 
 		assertThat(repository.findByName("Yoda", Sort.by("date"))).contains(entry);
 	}
