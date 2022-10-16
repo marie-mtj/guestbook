@@ -128,6 +128,7 @@ class GuestbookController {
 		model.addAttribute("entry", guestbook.save(form.toNewEntry()));
 		model.addAttribute("index", guestbook.count());
 
+
 		return "guestbook :: entry";
 	}
 

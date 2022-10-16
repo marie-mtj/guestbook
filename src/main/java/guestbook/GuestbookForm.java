@@ -83,6 +83,6 @@ class GuestbookForm {
 		return email;
 	}
 	GuestbookEntry toNewEntry() {
-		return new GuestbookEntry(getName(), getText());
+		return new GuestbookEntry(getName(), getText(), getEmail());
 	}
 }
