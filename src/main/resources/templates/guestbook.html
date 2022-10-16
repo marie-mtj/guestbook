@@ -35,7 +35,8 @@
 							</button>
 						</form>
 						<h4 th:text="${index} + '. ' + ${entry.name}" class="card-title">1. Posting</h4>
-						<p th:text="${entry.email}"></p>
+
+						<td><a th:href="@{mailto:{to}(to=${entry.email})}"><p th:text="${entry.email}"></p> </a></td>
 					</div>
 					<div class="card-body">
 						<blockquote class="entrytext" th:text="${entry.text}"></blockquote>
